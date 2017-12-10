@@ -1,57 +1,36 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React from 'react';
+import { connect } from 'react-redux';
+import { Scene, Router } from 'react-native-router-flux';
+import { Icon } from 'native-base';
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import MedalQRCodeCamera from './containers/MedalQRCodeCamera';
+import MedalList from './components/MedalList';
+import ScannedMedalDetail from './containers/ScannedMedalDetail';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const RouterWithRedux = connect()(Router);
 
-export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
-  }
-}
+const App = () => (
+  <RouterWithRedux>
+    <Scene key="root">
+      <Scene key="tabBar" tabs={true}>
+        <Scene
+          key="qrCode"
+          initial
+          hideNavBar={true}
+          component={MedalQRCodeCamera}
+          title="QRコード" icon={() => <Icon name="camera" />}
+        />
+        <Scene
+          key="medalList"
+          hideNavBar={true}
+          component={MedalList}
+          title="リスト"
+          icon={() => <Icon name="list" />}
+        />
+      </Scene>
+      <Scene key="medalDetail" component={ScannedMedalDetail} title="メダル詳細" />
+    </Scene>
+  </RouterWithRedux>
+);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+export default App;
