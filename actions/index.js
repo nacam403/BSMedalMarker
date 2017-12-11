@@ -28,3 +28,13 @@ export function addOrUpdateMedal({ registered, url, used }) {
     }
   };
 }
+
+export function updateMedal({ url, used }) {
+  return {
+    type: 'UPDATE_MEDAL',
+    medal: {
+      url,
+      used
+    }
+  };
+}

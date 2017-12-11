@@ -17,7 +17,7 @@ const MedalListItem = ({ url, used, onSwitchValueChange }) => {
       </Body>
       <Right>
         <Text>{used ? '使用済み' : '未使用'}</Text>
-        <Switch value={used} onValueChange={onSwitchValueChange}/>
+        <Switch value={used} onValueChange={value => onSwitchValueChange(value)}/>
       </Right>
     </ListItem>
   );

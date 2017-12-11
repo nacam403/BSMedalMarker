@@ -12,13 +12,16 @@ const styles = StyleSheet.create({
   }
 });
 
-const MedalList = ({ medals }) => (
+const MedalList = ({ medals, onItemSwitchValueChange }) => (
   <List style={styles.list}>
     {medals.map(item => <MedalListItem
       key={item.url}
       url={item.url}
       used={item.used}
-      onValueChange={() => {}}
+      onSwitchValueChange={used => onItemSwitchValueChange({
+        url: item.url,
+        used
+      })}
     />)}
   </List>
 );
@@ -29,7 +32,8 @@ MedalList.propTypes = {
       url: PropTypes.string.isRequired,
       used: PropTypes.bool.isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  onItemSwitchValueChange: PropTypes.func.isRequired
 };
 
 export default MedalList;
