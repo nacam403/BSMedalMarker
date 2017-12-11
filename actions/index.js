@@ -15,8 +15,11 @@ export function updateScannedMedal(scannedMedal) {
   };
 }
 
-export function addOrUpdateMedal(registered, url, used) {
+export function addOrUpdateMedal({ registered, url, used }) {
+  // tabs配下でないSceneから、tabs配下のSceneにうまく直接移動する方法が見つからず、とりあえず2ステップで移動。
+  Actions.pop();
   Actions.medalList();
+
   return {
     type: registered ? 'UPDATE_MEDAL' : 'ADD_MEDAL',
     medal: {

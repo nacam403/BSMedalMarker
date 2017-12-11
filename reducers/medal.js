@@ -35,6 +35,11 @@ export default function reducer(state = initialState, action) {
       ]
     });
 
+  case 'UPDATE_MEDAL':
+    return Object.assign({}, state, {
+      medals: state.medals.map(medal => (medal.url !== action.medal.url) ? medal : action.medal)
+    });
+
   default:
     return state;
   }

@@ -7,8 +7,8 @@ const mapStateToProps = state => state.medal.scannedMedal;
 
 const mapDispatchToProps = dispatch => {
   return {
-    onUpdateFields: (scannedMedal) => dispatch(Actions.updateScannedMedal(scannedMedal)),
-    onPressButton: () => {} // TODO
+    onUpdateFields: scannedMedal => dispatch(Actions.updateScannedMedal(scannedMedal)),
+    onPressButton: scannedMedal => dispatch(Actions.addOrUpdateMedal(scannedMedal))
   };
 };
 

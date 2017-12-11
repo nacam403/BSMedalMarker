@@ -4,7 +4,7 @@ import { Scene, Router } from 'react-native-router-flux';
 import { Icon } from 'native-base';
 
 import MedalQRCodeCamera from './containers/MedalQRCodeCamera';
-import MedalList from './components/MedalList';
+import CurrentMedalList from './containers/CurrentMedalList';
 import ScannedMedalDetail from './containers/ScannedMedalDetail';
 
 const RouterWithRedux = connect()(Router);
@@ -23,7 +23,7 @@ const App = () => (
         <Scene
           key="medalList"
           hideNavBar={true}
-          component={MedalList}
+          component={CurrentMedalList}
           title="リスト"
           icon={() => <Icon name="list" />}
         />

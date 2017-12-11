@@ -35,8 +35,14 @@ const MedalDetail = ({ registered, url, used, onUpdateFields, onPressButton }) =
         }} />
     </ListItem>
     <ListItem>
-      <Button onPress={onPressButton}>
-        <Text>OK</Text>
+      <Button onPress={() => {
+        onPressButton({
+          registered,
+          url,
+          used
+        });
+      }}>
+        <Text>{registered ? '更新' : '登録'}</Text>
       </Button>
     </ListItem>
   </List>

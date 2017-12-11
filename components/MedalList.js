@@ -1,20 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { List } from 'native-base';
 
 import MedalListItem from './MedalListItem';
-
-const dummyList = [
-  {
-    url: 'https://example.com/1',
-    used: true
-  },
-  {
-    url: 'https://example.com/2',
-    used: false
-  }
-];
-
 
 const styles = StyleSheet.create({
   list: {
@@ -23,9 +12,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const MedalList = () => (
+const MedalList = ({ medals }) => (
   <List style={styles.list}>
-    {dummyList.map(item => <MedalListItem
+    {medals.map(item => <MedalListItem
       key={item.url}
       url={item.url}
       used={item.used}
@@ -33,5 +22,14 @@ const MedalList = () => (
     />)}
   </List>
 );
+
+MedalList.propTypes = {
+  medals: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      used: PropTypes.bool.isRequired
+    }).isRequired
+  ).isRequired
+};
 
 export default MedalList;
