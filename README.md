@@ -25,3 +25,11 @@ BANDAIのアーケードゲーム"[仮面ライダー ブットバソウル](htt
 - NativeBase: React Native用のコンポーネント集。無難にオシャレな一通りのUI部品が揃っている。
 - React Native Router Flux: 数あるルーティングのライブラリのうちの一つ。
 - redux-persist: Reduxのstoreを永続化するライブラリ。メダル一覧の保存に利用している。
+
+## スクリーンショット
+
+![カメラ起動中](screenshots/camera.png)
+
+![QRコード読み取り後](screenshots/scanned.png)
+
+![メダル一覧](screenshots/medal_list.png)
