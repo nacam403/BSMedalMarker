@@ -43,7 +43,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>sample: NSCameraUsageDescription</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>sample: NSPhotoLibraryUsageDescription </string>
+	<string>sample: NSPhotoLibraryUsageDescription</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>sample: NSPhotoLibraryAddUsageDescription </string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
