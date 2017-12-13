@@ -40,6 +40,10 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
+	<key>NSCameraUsageDescription</key>
+	<string>sample: NSCameraUsageDescription</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>sample: NSPhotoLibraryUsageDescription </string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
